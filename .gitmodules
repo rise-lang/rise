@@ -1,0 +1,3 @@
+[submodule "lib/arithexpr"]
+	path = lib/arithexpr
+	url = https://github.com/rise-lang/arithexpr.git

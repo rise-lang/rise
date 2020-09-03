@@ -42,4 +42,9 @@ object DSL {
   def oclIterate: OclIterate = OclIterate()()
   def oclCircularBuffer: OclCircularBuffer = OclCircularBuffer()()
   def oclRotateValues: OclRotateValues = OclRotateValues()()
+
+  object setVal {
+    def apply(array: Expr, index: Expr, value: Expr): Expr = SetVal()()(array, index, value)
+    def apply(index: Expr, value: Expr): Expr = fun(array => SetVal()()(array, index, value))
+  }
 }

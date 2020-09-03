@@ -114,4 +114,10 @@ object primitives {
           ArrayType(n + sz, s) ->: ArrayType(1 + n, ArrayType(sz, s))
       ))))
   }
+
+  @primitive case class SetVal()(override val t: Type = TypePlaceholder)
+    extends Primitive {
+    override def typeScheme: Type =
+      implN(n => implDT(t => ArrayType(n, t) ->: IndexType(n) ->: t ->: ArrayType(n, t)))
+  }
 }

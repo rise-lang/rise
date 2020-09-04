@@ -120,4 +120,12 @@ object primitives {
     override def typeScheme: Type =
       implN(n => implDT(t => ArrayType(n, t) ->: IndexType(n) ->: t ->: ArrayType(n, t)))
   }
+
+  @primitive case class ReduceByIndexSeq()(override val t: Type = TypePlaceholder)
+    extends Primitive{
+    override def typeScheme: Type =
+      implN(n => implN(k => implDT(t =>
+        (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, NatType) ->: ArrayType(n, t) ->: ArrayType(k, t)
+      )))
+  }
 }

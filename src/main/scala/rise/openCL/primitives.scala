@@ -124,8 +124,14 @@ object primitives {
   @primitive case class ReduceByIndexSeq()(override val t: Type = TypePlaceholder)
     extends Primitive{
     override def typeScheme: Type =
-      implN(n => implN(k => implDT(t =>
-        (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, NatType) ->: ArrayType(n, t) ->: ArrayType(k, t)
-      )))
+      aFunT(_ =>
+        implN(n =>
+          implN(k =>
+            implDT(t =>
+              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, NatType) ->: ArrayType(n, t) ->: ArrayType(k, t)
+            )
+          )
+        )
+      )
   }
 }

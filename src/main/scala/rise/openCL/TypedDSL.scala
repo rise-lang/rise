@@ -64,4 +64,6 @@ object TypedDSL {
     toTDSL(OclCircularBuffer()())
   def oclRotateValues: TDSL[OclRotateValues] =
     toTDSL(OclRotateValues()())
+
+  def reduceByIndexSeq: TDSL[ReduceByIndexSeq] = toTDSL(ReduceByIndexSeq()())
 }

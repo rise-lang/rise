@@ -44,4 +44,5 @@ object DSL {
   def oclRotateValues: OclRotateValues = OclRotateValues()()
 
   def reduceByIndexSeq: ReduceByIndexSeq = ReduceByIndexSeq()()
+  def oclSegmentedReduce: OclSegmentedReduce = OclSegmentedReduce()()
 }

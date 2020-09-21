@@ -124,7 +124,7 @@ object primitives {
         implN(n =>
           implN(k =>
             implDT(t =>
-              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, IndexType(k)) ->: ArrayType(n, t) ->: ArrayType(k, t)
+              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, PairType(IndexType(k), t)) ->: ArrayType(k, t)
             )
           )
         )
@@ -138,7 +138,7 @@ object primitives {
         implN(n =>
           implN(k =>
             implDT(t =>
-              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, IndexType(k)) ->: ArrayType(n, t) ->: ArrayType(k, t)
+              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, PairType(IndexType(k), t)) ->: ArrayType(k, t)
             )
           )
         )

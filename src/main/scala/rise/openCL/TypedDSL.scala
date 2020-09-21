@@ -65,5 +65,7 @@ object TypedDSL {
   def oclRotateValues: TDSL[OclRotateValues] =
     toTDSL(OclRotateValues()())
 
-  def reduceByIndexSeq: TDSL[ReduceByIndexSeq] = toTDSL(ReduceByIndexSeq()())
+  def oclReduceByIndexSeq: TDSL[OclReduceByIndexSeq] = toTDSL(OclReduceByIndexSeq()())
+  def oclReduceByIndexPar: TDSL[OclReduceByIndexPar] = toTDSL(OclReduceByIndexPar()())
+  def oclSegmentedReduce: TDSL[OclSegmentedReduce] = toTDSL(OclSegmentedReduce()())
 }

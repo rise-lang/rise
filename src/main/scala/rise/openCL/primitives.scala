@@ -117,7 +117,21 @@ object primitives {
       ))))
   }
 
-  @primitive case class ReduceByIndexSeq()(override val t: Type = TypePlaceholder)
+  @primitive case class OclReduceByIndexSeq()(override val t: Type = TypePlaceholder)
+    extends Primitive {
+    override def typeScheme: Type =
+      aFunT(_ =>
+        implN(n =>
+          implN(k =>
+            implDT(t =>
+              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, IndexType(k)) ->: ArrayType(n, t) ->: ArrayType(k, t)
+            )
+          )
+        )
+      )
+  }
+
+  @primitive case class OclReduceByIndexPar()(override val t: Type = TypePlaceholder)
     extends Primitive {
     override def typeScheme: Type =
       aFunT(_ =>

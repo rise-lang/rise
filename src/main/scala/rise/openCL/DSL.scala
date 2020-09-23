@@ -45,5 +45,6 @@ object DSL {
 
   def oclReduceByIndexSeq: OclReduceByIndexSeq = OclReduceByIndexSeq()()
   def oclReduceByIndexLocal: OclReduceByIndexLocal = OclReduceByIndexLocal()()
-  def oclSegmentedReduce: OclSegmentedReduce = OclSegmentedReduce()()
+  def oclSegReduce: OclSegReduce = OclSegReduce()()
+  def oclSegReduceAtomic: OclSegReduceAtomic = OclSegReduceAtomic()()
 }

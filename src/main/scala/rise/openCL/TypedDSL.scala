@@ -67,6 +67,14 @@ object TypedDSL {
 
   def oclReduceByIndexSeq: TDSL[OclReduceByIndexSeq] = toTDSL(OclReduceByIndexSeq()())
   def oclReduceByIndexLocal: TDSL[OclReduceByIndexLocal] = toTDSL(OclReduceByIndexLocal()())
-  def oclSegReduce: TDSL[OclSegReduce] = toTDSL(OclSegReduce()())
-  def oclSegReduceAtomic: TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic()())
+
+  object oclSegReduce {
+    def apply(): TDSL[OclSegReduce] = toTDSL(OclSegReduce(32)())
+    def apply(m: Int): TDSL[OclSegReduce] = toTDSL(OclSegReduce(m)())
+  }
+
+  object oclSegReduceAtomic {
+    def apply(): TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic(32)())
+    def apply(m: Int): TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic(m)())
+  }
 }

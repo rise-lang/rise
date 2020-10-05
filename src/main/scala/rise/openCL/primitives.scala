@@ -145,28 +145,32 @@ object primitives {
       )
   }
 
-  @primitive case class OclSegReduce(m: Int)(override val t: Type = TypePlaceholder)
+  @primitive case class OclSegReduce()(override val t: Type = TypePlaceholder)
     extends Primitive {
     override def typeScheme: Type =
-      aFunT(_ =>
-        implN(n =>
-          implN(k =>
-            implDT(t =>
-              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, PairType(IndexType(k), t)) ->: ArrayType(k, t)
+      nFunT(_ =>
+        aFunT(_ =>
+          implN(n =>
+            implN(k =>
+              implDT(t =>
+                (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, PairType(IndexType(k), t)) ->: ArrayType(k, t)
+              )
             )
           )
         )
       )
   }
 
-  @primitive case class OclSegReduceAtomic(m: Int)(override val t: Type = TypePlaceholder)
+  @primitive case class OclSegReduceAtomic()(override val t: Type = TypePlaceholder)
     extends Primitive {
     override def typeScheme: Type =
-      aFunT(_ =>
-        implN(n =>
-          implN(k =>
-            implDT(t =>
-              (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, PairType(IndexType(k), t)) ->: ArrayType(k, t)
+      nFunT(_ =>
+        aFunT(_ =>
+          implN(n =>
+            implN(k =>
+              implDT(t =>
+                (t ->: t ->: t) ->: ArrayType(k, t) ->: ArrayType(n, PairType(IndexType(k), t)) ->: ArrayType(k, t)
+              )
             )
           )
         )

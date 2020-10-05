@@ -69,12 +69,12 @@ object TypedDSL {
   def oclReduceByIndexLocal: TDSL[OclReduceByIndexLocal] = toTDSL(OclReduceByIndexLocal()())
 
   object oclSegReduce {
-    def apply(): TDSL[OclSegReduce] = toTDSL(OclSegReduce(32)())
-    def apply(m: Int): TDSL[OclSegReduce] = toTDSL(OclSegReduce(m)())
+    def apply(): TDSL[OclSegReduce] = toTDSL(OclSegReduce()())
+    //def apply(m: Int): TDSL[OclSegReduce] = toTDSL(OclSegReduce(m)())
   }
 
   object oclSegReduceAtomic {
-    def apply(): TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic(32)())
-    def apply(m: Int): TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic(m)())
+    def apply(): TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic()())
+    //def apply(m: Int): TDSL[OclSegReduceAtomic] = toTDSL(OclSegReduceAtomic(m)())
   }
 }

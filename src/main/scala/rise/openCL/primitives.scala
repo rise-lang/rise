@@ -131,7 +131,7 @@ object primitives {
       )
   }
 
-  @primitive case class OclReduceByIndexLocal()(override val t: Type = TypePlaceholder)
+  @primitive case class OclReduceByIndexWrg()(override val t: Type = TypePlaceholder)
     extends Primitive {
     override def typeScheme: Type =
       aFunT(_ =>
@@ -145,7 +145,7 @@ object primitives {
       )
   }
 
-  @primitive case class OclSegReduce()(override val t: Type = TypePlaceholder)
+  @primitive case class OclSegReduceWrg()(override val t: Type = TypePlaceholder)
     extends Primitive {
     override def typeScheme: Type =
       nFunT(_ =>
@@ -161,7 +161,7 @@ object primitives {
       )
   }
 
-  @primitive case class OclSegReduceAtomic()(override val t: Type = TypePlaceholder)
+  @primitive case class OclSegReduceAtomicWrg()(override val t: Type = TypePlaceholder)
     extends Primitive {
     override def typeScheme: Type =
       nFunT(_ =>

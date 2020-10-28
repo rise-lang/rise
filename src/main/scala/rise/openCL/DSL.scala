@@ -43,8 +43,8 @@ object DSL {
   def oclCircularBuffer: OclCircularBuffer = OclCircularBuffer()()
   def oclRotateValues: OclRotateValues = OclRotateValues()()
 
-  def oclReduceByIndexSeq: OclReduceByIndexSeq = OclReduceByIndexSeq()()
-  def oclReduceByIndexWrg: OclReduceByIndexWrg = OclReduceByIndexWrg()()
+  def oclReduceByKeySeq: OclReduceByIndexSeq = OclReduceByIndexSeq()()
+  def oclReduceByKeyWrg: OclReduceByIndexWrg = OclReduceByIndexWrg()()
   def oclSegReduceWrg: OclSegReduceWrg = OclSegReduceWrg()()
   def oclSegReduceAtomicWrg: OclSegReduceAtomicWrg = OclSegReduceAtomicWrg()()
 }
